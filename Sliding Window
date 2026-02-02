@@ -1,0 +1,121 @@
+
+Sliding Window :
+An optimization pattern that converts brute-force O(n²) scans into linear O(n) solutions.
+
+What Sliding Window Solves (Core Idea Recap)
+
+Applicable when the problem involves:
+
+Contiguous subarray / substring
+Running range (window) over data
+
+Instead of recalculating from scratch, you:
+Add the next element
+Remove the previous element
+
+Window moves left → right, keeping computations incremental.
+
+Primary Use Cases of Sliding Window
+1. Fixed-Size Window Problems
+Window size k is known in advance.
+
+Typical Questions
+Maximum / minimum sum of subarray of size k
+Average of subarrays of size k
+First negative number in every window of size k
+
+Why Sliding Window?
+Avoid recomputing sum for each window
+Time complexity reduces from O(n*k) → O(n)
+
+2. Variable-Size Window (Dynamic Window)
+Window size is not fixed and depends on a condition.
+
+Typical Questions
+Longest subarray with sum ≤ K
+Smallest subarray with sum ≥ K
+Longest substring with at most K distinct characters
+
+Why Sliding Window?
+Window expands when condition is valid
+Window shrinks when condition breaks
+
+3. Substring / Character Frequency Problems
+
+Very common in interviews.
+Typical Questions
+Longest substring without repeating characters
+Longest substring with at most K distinct characters
+Permutation in string
+Find all anagrams of a pattern
+Key Data Structures
+Dictionary / HashMap
+Frequency array (int[26])
+
+Why Sliding Window?
+Tracks character frequency in current window
+Eliminates nested loops
+
+4. Sum / Target-Based Problems
+
+Problems involving continuous sums.
+
+Typical Questions
+
+Subarray with given sum
+
+Count of subarrays with sum = K
+
+Longest subarray with sum = K
+
+Important Insight
+
+Works best when:
+
+All numbers are positive (classic sliding window)
+
+With negatives:
+
+Prefix Sum + HashMap is preferred
+
+5. Optimization & Performance Scenarios
+
+Used when constraints are large (n ≤ 10⁵ or more).
+
+Examples
+
+Streaming data processing
+
+Real-time analytics
+
+Log window aggregation
+
+Rate-limiting logic
+
+Sliding Window vs Brute Force (Interview Angle)
+Approach	Time Complexity	Interview Impression
+Brute Force	O(n²)	Weak
+Sliding Window	O(n)	Strong
+Sliding Window + HashMap	O(n)	Advanced
+Mental Model for Solving Problems
+
+When reading a problem, ask:
+Is the data contiguous?
+Do I need max/min/longest/smallest in a range?
+Can previous computation help next step?
+If YES → Sliding Window
+
+int left = 0;
+for (int right = 0; right < n; right++)
+{
+    // include right element
+
+    while (condition is violated)
+    {
+        // exclude left element
+        left++;
+    }
+
+    // update answer
+}
+
