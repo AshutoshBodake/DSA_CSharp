@@ -105,6 +105,118 @@ Do I need max/min/longest/smallest in a range?
 Can previous computation help next step?
 If YES → Sliding Window
 
+4. In a variable-size sliding window, when do we shrink the window?
+
+A. When right pointer reaches end
+B. When condition is satisfied
+C. When condition is violated
+D. When window size becomes zero
+
+✅ Answer: C
+
+5. You are analyzing API logs to find the maximum number of requests in any 10-second interval. Which approach is optimal?
+
+A. Nested loops
+B. Sliding Window
+C. Binary Search
+D. Divide and Conquer
+
+✅ Answer: B
+Backend Mapping: Rate limiting, throttling, monitoring.
+
+6. Sliding Window fails or becomes incorrect when:
+
+A. Window size is fixed
+B. Data contains negative numbers (sum-based problems)
+C. Using HashMap
+D. Using arrays
+
+✅ Answer: B
+Explanation: Negative numbers break the monotonic property.
+
+7. Which data structure is MOST commonly used with sliding window for strings?
+
+A. Stack
+B. Queue
+C. Dictionary / HashMap
+D. Tree
+
+✅ Answer: C
+
+8. Longest substring without repeating characters uses:
+
+A. Fixed-size window
+B. Variable-size window
+C. Two nested loops
+D. Recursion
+
+✅ Answer: B
+
+9. In C#, which variable typically represents the window start?
+
+A. i
+B. right
+C. left
+D. count
+
+✅ Answer: C
+
+10. For a stream of telemetry data in Azure, sliding window is commonly used in:
+
+A. Authentication
+B. Caching
+C. Real-time aggregation
+D. Serialization
+
+✅ Answer: C
+
+11. What is the space complexity of a basic sliding window without extra data structures?
+
+A. O(n)
+B. O(log n)
+C. O(1)
+D. O(n²)
+
+✅ Answer: C
+
+12. Which problem requires Prefix Sum + HashMap instead of Sliding Window?
+
+A. Max sum subarray of size K
+B. Longest substring with unique characters
+C. Count subarrays with sum = K (includes negatives)
+D. Average of subarrays of size K
+
+✅ Answer: C
+
+13. In backend systems, sliding window is heavily used in:
+
+A. ORM mapping
+B. Rate limiting & throttling
+C. Dependency injection
+D. Serialization
+
+✅ Answer: B
+
+14. What is the correct order in a sliding window loop?
+
+A. Remove → Add → Update
+B. Add → Update → Remove
+C. Add → Shrink (if needed) → Update
+D. Update → Add → Shrink
+
+✅ Answer: C
+
+15. Why do interviewers prefer Sliding Window solutions?
+
+A. Shorter code
+B. Uses recursion
+C. Demonstrates optimization & problem decomposition
+D. Uses advanced libraries
+
+✅ Answer: C
+Problem decomposition is the strategy of breaking a large, complex problem into smaller, 
+more manageable sub-problems to make it easier to understand, analyze, and solve systematically
+
 int left = 0;
 for (int right = 0; right < n; right++)
 {
@@ -118,4 +230,6 @@ for (int right = 0; right < n; right++)
 
     // update answer
 }
+
+
 
