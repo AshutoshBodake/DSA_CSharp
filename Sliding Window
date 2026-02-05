@@ -232,4 +232,19 @@ for (int right = 0; right < n; right++)
 }
 
 
+Variable Size Sliding Window Approach:
+While the basic sliding window technique involves a fixed-size window that moves through the data structure, 
+the variable-size sliding window introduces flexibility by allowing the window size to change dynamically based on certain conditions.
+
+This is particularly useful when the problem involves finding a subarray or substring that satisfies certain criteria.
+In this approach, instead of maintaining a fixed-size window throughout the entire process, you adjust the window size as needed. 
+The window can grow or shrink depending on the problem’s requirements.
+
+Example Problem: Longest Subarray with Sum Less Than K
+
+Problem: Given an array of positive integers and an integer K, find the length of the longest subarray whose sum is less than K.
+Initialize variables: left to track the start of the subarray and right to iterate through the array.
+Initialize windowSum as the first element of the array.
+Initialize maxLength to keep track of the maximum subarray length.
+Press enter or click to view image in full size
 
