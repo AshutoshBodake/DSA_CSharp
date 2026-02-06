@@ -246,5 +246,45 @@ Problem: Given an array of positive integers and an integer K, find the length o
 Initialize variables: left to track the start of the subarray and right to iterate through the array.
 Initialize windowSum as the first element of the array.
 Initialize maxLength to keep track of the maximum subarray length.
-Press enter or click to view image in full size
+Press enter or click to view image in full size.
 
+Fixed Size Window
+public static int MaxSumSubarray(int[] arr, int k)
+{
+    int n = arr.Length;
+
+    int maxSum = 0;
+    for (int i = 0; i < k; i++)
+    {
+        maxSum += arr[i];
+    }
+    int windowSum = maxSum;
+    for (int i = k; i < arr.Length; i++)
+    {
+        windowSum += arr[i] - arr[i - k];
+        maxSum = Math.Max(windowSum, maxSum);
+    }
+    return maxSum;
+}
+
+Variable Size Sliding Window
+public static int LengthOfLongestSubstring(string s)
+{
+    int n = s.Length;
+    int maxLength = 0;
+    int start = 0;
+    int end = 0;
+    Dictionary<char, int> dict = new Dictionary<char, int>();
+
+    for (end = 0; end < n; end++)
+    {
+        char currentChar = s[end];
+        if (dict.ContainsKey(currentChar) && dict[currentChar] >= start)
+        {
+            start = dict[currentChar] + 1;
+        }
+        dict[currentChar] = end;
+        maxLength = Math.Max(maxLength, end - start + 1);
+    }
+    return maxLength;
+}
